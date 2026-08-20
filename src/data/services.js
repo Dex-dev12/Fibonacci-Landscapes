@@ -1,0 +1,167 @@
+import { Waves, LayoutGrid, HardHat, Layers, Trees, Sofa, Hammer, Mountain } from 'lucide-react'
+
+export const SERVICES = [
+  {
+    slug: 'pool-surrounds',
+    icon: Waves,
+    title: 'Pool Surrounds',
+    text: "Coping, paving and non-slip finishes engineered around the drainage and chemical exposure of a working pool edge.",
+    body: "This is where our 7-8 years of experience really shows. Pool surrounds have to handle constant water exposure, pool chemicals and heavy foot traffic while still looking sharp. We build coping and paving that is engineered for drainage and finished with a non-slip surface, so the space is safe as well as good looking.",
+    bullets: [
+      "Non-slip surfaces engineered for wet, high-traffic conditions",
+      "Correct slope and drainage around the pool edge",
+      "Natural stone, travertine or premium paver options",
+      "Backed by 7-8 years of pool-specific experience",
+    ],
+    img: '/images/hero-1.jpg',
+    thumb: '/images/thumbs/hero-1.jpg',
+    alt: 'Pool surround with light stone paving and glass pool fencing',
+    gallery: [
+      { src: '/images/hero-1.jpg', alt: 'Pool surround with light stone paving and glass pool fencing' },
+      { src: '/images/hero-2.jpg', alt: 'Pool with travertine paving and timber fencing' },
+      { src: '/images/hero-3.jpg', alt: 'Pool deck at golden hour' },
+    ],
+  },
+  {
+    slug: 'paving',
+    icon: LayoutGrid,
+    title: 'Paving',
+    text: "Natural stone, travertine and paver driveways, patios and pool decks, laid level and built to shed water the right way.",
+    body: "Paving that lasts starts underground. We prepare and compact the base properly before anything is laid, then set pavers or natural stone level and sloped for drainage, so the finished surface holds up through Central Coast weather and seasonal ground movement.",
+    bullets: [
+      "Natural stone, travertine and premium paver options",
+      "Proper base preparation and compaction",
+      "Correct grading for drainage",
+      "Precision installation and grouting",
+    ],
+    img: '/images/service-paving.jpg',
+    thumb: '/images/thumbs/service-paving.jpg',
+    alt: 'Granite pool paving at golden hour',
+    gallery: [
+      { src: '/images/service-paving.jpg', alt: 'Granite pool paving at golden hour' },
+      { src: '/images/service-fencing.jpg', alt: 'Pool paving with colorbond fencing and garden bed' },
+    ],
+  },
+  {
+    slug: 'concreting',
+    icon: HardHat,
+    title: 'Concreting',
+    text: "Exposed aggregate, plain and coloured concrete for slabs, paths and driveways built for Central Coast weather.",
+    body: "Concrete is often the base layer for the rest of a project, so it needs to be right the first time. We pour driveways, paths and slabs with the correct slope for drainage and a finish that holds up to the local climate.",
+    bullets: [
+      "Plain, coloured and exposed aggregate finishes",
+      "Engineered for proper drainage slope",
+      "Built for Central Coast weather",
+      "Low maintenance once cured",
+    ],
+    img: '/images/service-concreting.jpg',
+    thumb: '/images/thumbs/service-concreting.jpg',
+    alt: 'Concrete driveway with drainage channel beside a stone-clad feature wall',
+    gallery: [
+      { src: '/images/service-concreting.jpg', alt: 'Concrete driveway with drainage channel beside a stone-clad feature wall' },
+    ],
+  },
+  {
+    slug: 'retaining-walls',
+    icon: Layers,
+    title: 'Retaining Walls',
+    text: "Engineered retaining walls that terrace sloped sites and hold ground before erosion becomes a problem.",
+    body: "Sloped blocks limit how much of your property you can actually use, and left alone they erode over time. We build retaining walls that terrace the site into usable space, with proper drainage behind the wall so water pressure never becomes the next problem.",
+    bullets: [
+      "Terraces sloped land into usable space",
+      "Prevents soil erosion",
+      "Proper drainage design behind the wall",
+      "Natural sandstone and block options",
+    ],
+    img: '/images/service-retaining-wall.jpg',
+    thumb: '/images/thumbs/service-retaining-wall.jpg',
+    alt: 'Natural sandstone retaining wall beside a pool',
+    gallery: [
+      { src: '/images/service-retaining-wall.jpg', alt: 'Natural sandstone retaining wall beside a pool' },
+      { src: '/images/service-retaining-wall-2.jpg', alt: 'Sandstone retaining wall with garden bed planting' },
+    ],
+  },
+  {
+    slug: 'gardens',
+    icon: Trees,
+    title: 'Garden & Landscape Design',
+    text: "Garden beds, paths and planting design that ties the whole property together, fence line to pool edge.",
+    body: "A garden is what pulls the hardscaping together into a finished property. We design and install garden beds, paths and planting that suit your site's sun exposure and soil, so the space reads as one cohesive design rather than separate projects.",
+    bullets: [
+      "Cohesive design across the whole property",
+      "Garden bed design and edging",
+      "Paths and stepping stone layouts",
+      "Ties hardscaping and planting together",
+    ],
+    img: '/images/service-gardens.jpg',
+    thumb: '/images/thumbs/service-gardens.jpg',
+    alt: 'Garden pathway with stepping stones and native planting',
+    gallery: [
+      { src: '/images/service-gardens.jpg', alt: 'Garden pathway with stepping stones and native planting' },
+    ],
+  },
+  {
+    slug: 'full-service',
+    icon: Sofa,
+    title: 'Full Service Landscape & Construction',
+    text: "Complete backyard transformations, from first sketch to a finished space your family will actually use.",
+    body: "Rather than coordinating separate contractors for paving, concreting, walls and planting, we handle the whole project as one job. One crew, one schedule, one point of contact, from the first sketch through to the final sweep.",
+    bullets: [
+      "Single point of contact for the whole project",
+      "Design that considers every element together",
+      "One coordinated schedule",
+      "Consistent quality and finishing throughout",
+    ],
+    img: '/images/process-2-build.jpg',
+    thumb: '/images/thumbs/process-2-build.jpg',
+    alt: 'Fibonacci crew mid-build on a landscape construction project',
+    gallery: [
+      { src: '/images/process-1-design.jpg', alt: 'Landscape design and site planning' },
+      { src: '/images/process-2-build.jpg', alt: 'Construction and installation in progress' },
+      { src: '/images/process-3-finish.jpg', alt: 'Finished landscape project detail' },
+    ],
+  },
+  {
+    slug: 'fencing',
+    icon: Hammer,
+    title: 'Fencing',
+    text: "Quality fencing for privacy, pool safety and property definition.",
+    body: "Fencing sets the boundary and character of a property. We install fencing suited to your site and needs, whether that's for pool safety compliance, privacy, or simply defining the edge of a new landscaped area.",
+    bullets: [
+      "Privacy and boundary definition",
+      "Pool-safety compliant options where required",
+      "Colorbond and timber options",
+      "Professional post and panel installation",
+    ],
+    img: '/images/service-fencing.jpg',
+    thumb: '/images/thumbs/service-fencing.jpg',
+    alt: 'Colorbond fencing beside pool paving and garden bed',
+    gallery: [
+      { src: '/images/service-fencing.jpg', alt: 'Colorbond fencing beside pool paving and garden bed' },
+    ],
+  },
+  {
+    slug: 'stone-cladding',
+    icon: Mountain,
+    title: 'Stone Cladding',
+    text: "Premium stone cladding work, one of the areas we're best known for.",
+    body: "Stone cladding is one of our specialties. Getting it right takes precision mortar work, careful alignment and the right stone selection for the application. This is the finish that gets noticed, and it's where our experience shows most clearly.",
+    bullets: [
+      "A specialty area with years of focused experience",
+      "Careful stone selection and sourcing",
+      "Precision mortar work and alignment",
+      "Indoor feature walls and outdoor cladding",
+    ],
+    img: '/images/service-stone-cladding.jpg',
+    thumb: '/images/thumbs/service-stone-cladding.jpg',
+    alt: 'Natural stone cladding feature wall around an indoor fireplace',
+    gallery: [
+      { src: '/images/service-stone-cladding.jpg', alt: 'Natural stone cladding feature wall around an indoor fireplace' },
+      { src: '/images/service-stone-cladding-2.jpg', alt: 'White stone-clad chimney feature beside a concrete driveway' },
+    ],
+  },
+]
+
+export function getServiceBySlug(slug) {
+  return SERVICES.find((s) => s.slug === slug)
+}
