@@ -5,8 +5,17 @@ import { PageBanner } from '../components/shared.jsx'
 
 export default function Contact() {
   const ref = useRef(null)
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' })
-  const [status, setStatus] = useState('idle')
+  const [formLoaded, setFormLoaded] = useState(false)
+
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = 'https://links.versflows.com/js/form_embed.js'
+    script.async = true
+    document.body.appendChild(script)
+    return () => {
+      if (script.parentNode) script.parentNode.removeChild(script)
+    }
+  }, [])
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -21,21 +30,6 @@ export default function Contact() {
     }, ref)
     return () => ctx.revert()
   }, [])
-
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setStatus('sending')
-    setTimeout(() => {
-      setStatus('sent')
-      setFormData({ name: '', email: '', phone: '', message: '' })
-      setTimeout(() => setStatus('idle'), 3000)
-    }, 1000)
-  }
 
   return (
     <>
@@ -113,62 +107,67 @@ export default function Contact() {
               <p className="text-xs text-muted mt-8 leading-relaxed">Your details are used only to prepare your quote and schedule the job.</p>
             </div>
 
-            <div className="contact-form lg:col-span-8 bg-surface border border-divider rounded-3xl p-6 sm:p-8">
-              <h2 className="font-display text-2xl font-bold text-ink mb-6">Send us a message</h2>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-ink mb-2">Name</label>
-                    <input
-                      type="text" id="name" name="name" value={formData.name} onChange={handleChange} required
-                      className="w-full px-4 py-3 bg-background border border-divider rounded-lg text-ink placeholder-muted/50 focus:outline-none focus:border-primary transition-colors"
-                      placeholder="Your name"
-                    />
+            <div className="contact-form lg:col-span-8 bg-surface border border-divider rounded-3xl p-6 sm:p-8 relative overflow-hidden" style={{ minHeight: '480px' }}>
+              {!formLoaded && (
+                <div className="absolute inset-6 sm:inset-8 animate-pulse" aria-hidden="true">
+                  <div className="grid grid-cols-2 gap-4 mb-5">
+                    <div>
+                      <div className="h-3 w-20 bg-divider rounded mb-2" />
+                      <div className="h-11 bg-divider rounded-lg" />
+                    </div>
+                    <div>
+                      <div className="h-3 w-20 bg-divider rounded mb-2" />
+                      <div className="h-11 bg-divider rounded-lg" />
+                    </div>
                   </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-ink mb-2">Phone</label>
-                    <input
-                      type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange}
-                      className="w-full px-4 py-3 bg-background border border-divider rounded-lg text-ink placeholder-muted/50 focus:outline-none focus:border-primary transition-colors"
-                      placeholder="0412 195 698"
-                    />
+                  <div className="grid grid-cols-2 gap-4 mb-5">
+                    <div>
+                      <div className="h-3 w-16 bg-divider rounded mb-2" />
+                      <div className="h-11 bg-divider rounded-lg" />
+                    </div>
+                    <div>
+                      <div className="h-3 w-16 bg-divider rounded mb-2" />
+                      <div className="h-11 bg-divider rounded-lg" />
+                    </div>
                   </div>
+                  <div className="mb-5">
+                    <div className="h-3 w-20 bg-divider rounded mb-2" />
+                    <div className="h-24 bg-divider rounded-lg" />
+                  </div>
+                  <div className="h-3 w-3/4 bg-divider rounded mb-6" />
+                  <div className="h-11 bg-divider rounded-lg" />
                 </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-ink mb-2">Email</label>
-                  <input
-                    type="email" id="email" name="email" value={formData.email} onChange={handleChange} required
-                    className="w-full px-4 py-3 bg-background border border-divider rounded-lg text-ink placeholder-muted/50 focus:outline-none focus:border-primary transition-colors"
-                    placeholder="your@email.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-ink mb-2">Message</label>
-                  <textarea
-                    id="message" name="message" value={formData.message} onChange={handleChange} required rows={5}
-                    className="w-full px-4 py-3 bg-background border border-divider rounded-lg text-ink placeholder-muted/50 focus:outline-none focus:border-primary transition-colors resize-none"
-                    placeholder="Tell us about your project..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={status !== 'idle'}
-                  className={`magnetic-btn w-full py-3 rounded-lg font-semibold transition-all ${
-                    status === 'idle'
-                      ? 'bg-primary text-deep shadow-lg shadow-primary/30'
-                      : status === 'sending'
-                      ? 'bg-primary/80 text-deep'
-                      : 'bg-emerald-600 text-white'
-                  }`}
-                >
-                  {status === 'idle' && 'Send Message'}
-                  {status === 'sending' && 'Sending...'}
-                  {status === 'sent' && 'Message Sent'}
-                </button>
-              </form>
+              )}
+              <iframe
+                onLoad={() => setFormLoaded(true)}
+                scrolling="no"
+                src="https://links.versflows.com/widget/form/DycZ16owjbJdizYeVO6J"
+                style={{
+                  width: '100%',
+                  height: '663px',
+                  border: 'none',
+                  borderRadius: '8px',
+                  background: '#13223B',
+                  overflow: 'hidden',
+                  opacity: formLoaded ? 1 : 0,
+                  transition: 'opacity 400ms ease',
+                }}
+                id="inline-DycZ16owjbJdizYeVO6J"
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="Fibonacci Landscapes Form"
+                data-height="663"
+                data-layout-iframe-id="inline-DycZ16owjbJdizYeVO6J"
+                data-form-id="DycZ16owjbJdizYeVO6J"
+                data-cookie-consent="true"
+                data-cookie-consent-provider="auto"
+                title="Fibonacci Landscapes Form"
+              />
             </div>
           </div>
         </div>
