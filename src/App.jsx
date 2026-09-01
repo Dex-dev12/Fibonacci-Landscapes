@@ -63,23 +63,32 @@ export default function App() {
       </main>
       <Footer />
       {prewarmForm && location.pathname !== '/contact' && (
-        <iframe
-          src={FORM_PREWARM_URL}
-          title=""
+        // Clipping wrapper: GoHighLevel's form_embed.js finds form iframes by the
+        // height messages they post and rewrites their inline styles, so the iframe
+        // itself can't be trusted to stay hidden. A fixed, zero-sized, overflow-hidden
+        // parent keeps whatever it does out of the document flow.
+        <div
           aria-hidden="true"
-          tabIndex={-1}
-          loading="eager"
           style={{
-            position: 'absolute',
-            left: '-9999px',
+            position: 'fixed',
             top: 0,
-            width: '1px',
-            height: '1px',
-            opacity: 0,
-            border: 0,
+            left: 0,
+            width: 0,
+            height: 0,
+            overflow: 'hidden',
             pointerEvents: 'none',
+            opacity: 0,
+            zIndex: -1,
           }}
-        />
+        >
+          <iframe
+            src={FORM_PREWARM_URL}
+            title=""
+            tabIndex={-1}
+            loading="eager"
+            style={{ width: '800px', height: '600px', border: 0 }}
+          />
+        </div>
       )}
     </div>
   )
