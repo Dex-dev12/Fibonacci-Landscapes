@@ -4,6 +4,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
+import { seoFor } from './data/seo.js'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -27,14 +28,30 @@ export default function App() {
     return () => clearTimeout(id)
   }, [prewarmForm])
 
+  // Prerendering supplies the correct title, description and canonical in the
+  // served HTML. This keeps them right across client-side route changes, and
+  // uses the www host the site actually resolves to - the previous version
+  // pointed at the apex, which 308-redirects.
   useEffect(() => {
+    const { title, description, canonical: href } = seoFor(location.pathname)
+
+    document.title = title
+
+    let desc = document.querySelector('meta[name="description"]')
+    if (!desc) {
+      desc = document.createElement('meta')
+      desc.setAttribute('name', 'description')
+      document.head.appendChild(desc)
+    }
+    desc.setAttribute('content', description)
+
     let canonical = document.querySelector('link[rel="canonical"]')
     if (!canonical) {
       canonical = document.createElement('link')
       canonical.setAttribute('rel', 'canonical')
       document.head.appendChild(canonical)
     }
-    canonical.setAttribute('href', `https://fibonaccilandscapes.com.au${location.pathname}`)
+    canonical.setAttribute('href', href)
   }, [location.pathname])
 
   useEffect(() => {
