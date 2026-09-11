@@ -4,6 +4,7 @@ import { gsap } from 'gsap'
 import { ArrowRight, ArrowUpRight, CheckCircle2 } from 'lucide-react'
 import { PageBanner } from '../components/shared.jsx'
 import { SERVICES, getServiceBySlug } from '../data/services.js'
+import { SERVICE_CONTENT } from '../data/serviceContent.js'
 import Img from '../components/Img.jsx'
 
 export default function ServiceDetail() {
@@ -42,6 +43,7 @@ export default function ServiceDetail() {
   if (!service) return <Navigate to="/services" replace />
 
   const others = SERVICES.filter((s) => s.slug !== slug)
+  const content = SERVICE_CONTENT[slug]
 
   return (
     <>
@@ -50,6 +52,9 @@ export default function ServiceDetail() {
       <section ref={bodyRef} className="py-24 sm:py-32">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 grid lg:grid-cols-12 gap-12">
           <div className="svc-detail-text lg:col-span-7">
+            {content?.intro && (
+              <p className="text-ink leading-relaxed text-lg sm:text-xl mb-6 font-medium">{content.intro}</p>
+            )}
             <p className="text-muted leading-relaxed text-base sm:text-lg mb-8">{service.body}</p>
             <ul className="space-y-3">
               {service.bullets.map((b) => (
@@ -82,6 +87,37 @@ export default function ServiceDetail() {
           </div>
         </div>
       </section>
+
+      {content?.sections?.length > 0 && (
+        <section className="pb-8 sm:pb-12">
+          <div className="max-w-3xl mx-auto px-6 sm:px-10 lg:px-16">
+            {content.sections.map((sec) => (
+              <div key={sec.heading} className="mb-12">
+                <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-ink mb-4">{sec.heading}</h2>
+                <p className="text-muted leading-relaxed text-base sm:text-lg">{sec.body}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {content?.faqs?.length > 0 && (
+        <section className="pb-24 sm:pb-32">
+          <div className="max-w-3xl mx-auto px-6 sm:px-10 lg:px-16">
+            <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-ink mb-8">
+              {service.title}, answered.
+            </h2>
+            <div className="divide-y divide-divider border-y border-divider">
+              {content.faqs.map((f) => (
+                <div key={f.q} className="py-6">
+                  <h3 className="font-semibold text-ink mb-2 text-base sm:text-lg">{f.q}</h3>
+                  <p className="text-muted leading-relaxed text-sm sm:text-base">{f.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section ref={othersRef} className="bg-deep text-white py-24 sm:py-32">
         <div className="svc-others-heading max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 mb-14">
