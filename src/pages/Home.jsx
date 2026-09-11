@@ -14,6 +14,7 @@ import {
   MapPin,
 } from 'lucide-react'
 import { SERVICES as SERVICES_FULL } from '../data/services.js'
+import Img from '../components/Img.jsx'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -39,10 +40,14 @@ function HeroCarousel() {
   return (
     <div className="absolute inset-0">
       {HERO_IMAGES.map((img, i) => (
-        <img
+        <Img
           key={img.src}
           src={img.src}
           alt={img.alt}
+          sizes="100vw"
+          fetchPriority={i === 0 ? 'high' : 'low'}
+          loading={i === 0 ? 'eager' : 'lazy'}
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-in-out"
           style={{
             opacity: i === active ? 1 : 0,
@@ -210,13 +215,13 @@ function WhoWeAre() {
       >
         <div className="grid grid-cols-2 gap-4">
           <div className="col-span-2 rounded-3xl overflow-hidden border border-divider aspect-[16/11]">
-            <img src="/images/hero-3.jpg" alt="Pool deck at golden hour" loading="lazy" decoding="async" className="h-full w-full object-cover" />
+            <Img src="/images/hero-3.jpg" alt="Pool deck at golden hour" sizes="(min-width: 1024px) 33vw, 100vw" loading="lazy" decoding="async" className="h-full w-full object-cover" />
           </div>
           <div className="rounded-2xl overflow-hidden border border-divider aspect-square">
-            <img src="/images/process-1-design.jpg" alt="Landscape design and site planning" loading="lazy" decoding="async" className="h-full w-full object-cover" />
+            <Img src="/images/process-1-design.jpg" alt="Landscape design and site planning" sizes="(min-width: 1024px) 33vw, 100vw" loading="lazy" decoding="async" className="h-full w-full object-cover" />
           </div>
           <div className="rounded-2xl overflow-hidden border border-divider aspect-square">
-            <img src="/images/service-retaining-wall-2.jpg" alt="Sandstone retaining wall with garden bed planting" loading="lazy" decoding="async" className="h-full w-full object-cover" />
+            <Img src="/images/service-retaining-wall-2.jpg" alt="Sandstone retaining wall with garden bed planting" sizes="(min-width: 1024px) 33vw, 100vw" loading="lazy" decoding="async" className="h-full w-full object-cover" />
           </div>
         </div>
 
@@ -354,7 +359,7 @@ function Protocol() {
               </div>
 
               <div className="lg:col-span-2 relative overflow-hidden min-h-[300px] lg:min-h-full bg-deep">
-                <img src={step.image} alt={step.alt} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+                <Img src={step.image} alt={step.alt} sizes="(min-width: 1024px) 33vw, 100vw" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-deep/60 via-transparent to-deep/15" />
                 <div className="absolute top-5 left-5 flex items-center gap-2 bg-background/90 backdrop-blur-sm rounded-full pl-3 pr-4 py-1.5 shadow-lg">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
@@ -402,10 +407,11 @@ function ServicesGrid() {
             const Icon = svc.icon
             return (
               <div key={i} className="svc-tile group relative overflow-hidden min-h-[340px] flex flex-col justify-between p-7 sm:p-9 transition-all duration-500">
-                <img
+                <Img
                   src={svc.thumb}
                   alt={svc.alt}
-                  loading="eager"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  loading="lazy"
                   decoding="async"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />

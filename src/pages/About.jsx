@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { Waves, Mountain, MapPin, Sofa } from 'lucide-react'
 import { PageBanner } from '../components/shared.jsx'
+import Img from '../components/Img.jsx'
 
 const STORY_PHOTOS = [
   { src: '/images/hero-1.jpg', alt: 'Pool surround with light stone paving and glass pool fencing' },
@@ -76,7 +77,7 @@ function WhyChooseUsSection() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
           {WHY_PHOTOS.map((p) => (
             <div key={p.src} className="why-photo rounded-2xl overflow-hidden border border-divider aspect-square">
-              <img src={p.src} alt={p.alt} loading="lazy" decoding="async" className="h-full w-full object-cover" />
+              <Img src={p.src} alt={p.alt} sizes="(min-width: 1024px) 50vw, 100vw" loading="lazy" decoding="async" className="h-full w-full object-cover" />
             </div>
           ))}
         </div>
@@ -134,7 +135,7 @@ function OurStory() {
         <div className="grid grid-cols-2 gap-4">
           {STORY_PHOTOS.map((p) => (
             <div key={p.src} className="story-photo rounded-2xl overflow-hidden border border-divider aspect-square">
-              <img src={p.src} alt={p.alt} loading="lazy" decoding="async" className="h-full w-full object-cover" />
+              <Img src={p.src} alt={p.alt} sizes="(min-width: 1024px) 50vw, 100vw" loading="lazy" decoding="async" className="h-full w-full object-cover" />
             </div>
           ))}
         </div>

@@ -4,6 +4,7 @@ import { gsap } from 'gsap'
 import { ArrowUpRight } from 'lucide-react'
 import { PageBanner } from '../components/shared.jsx'
 import { PORTFOLIO_ITEMS } from '../data/portfolio.js'
+import Img from '../components/Img.jsx'
 
 function PortfolioClosingCta() {
   const ref = useRef(null)
@@ -61,9 +62,10 @@ export default function Portfolio() {
                 rel="noopener noreferrer"
                 className="portfolio-tile relative rounded-3xl overflow-hidden border border-divider group aspect-[4/3] cursor-pointer"
               >
-                <img
+                <Img
                   src={item.img}
                   alt={item.alt}
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   loading="lazy"
                   decoding="async"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"

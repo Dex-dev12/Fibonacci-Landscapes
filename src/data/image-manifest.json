@@ -1,0 +1,188 @@
+{
+  "hero-1": {
+    "widths": [
+      640,
+      1024,
+      1200,
+      1440
+    ],
+    "w": 1440,
+    "h": 1440
+  },
+  "hero-2": {
+    "widths": [
+      640,
+      1024,
+      1200,
+      1440
+    ],
+    "w": 1440,
+    "h": 1440
+  },
+  "hero-3": {
+    "widths": [
+      640,
+      1024,
+      1200,
+      1440
+    ],
+    "w": 1536,
+    "h": 2048
+  },
+  "process-1-design": {
+    "widths": [
+      640,
+      1024
+    ],
+    "w": 1082,
+    "h": 1082
+  },
+  "process-2-build": {
+    "widths": [
+      640,
+      1024,
+      1200,
+      1440
+    ],
+    "w": 1440,
+    "h": 1440
+  },
+  "process-3-finish": {
+    "widths": [
+      640,
+      1024,
+      1200,
+      1440
+    ],
+    "w": 1536,
+    "h": 2048
+  },
+  "service-concreting": {
+    "widths": [
+      640,
+      1024,
+      1200
+    ],
+    "w": 1200,
+    "h": 1600
+  },
+  "service-fencing": {
+    "widths": [
+      640,
+      1024,
+      1200
+    ],
+    "w": 1200,
+    "h": 1600
+  },
+  "service-gardens": {
+    "widths": [
+      640,
+      1024,
+      1200,
+      1440
+    ],
+    "w": 1440,
+    "h": 1440
+  },
+  "service-paving": {
+    "widths": [
+      640,
+      1024,
+      1200
+    ],
+    "w": 1200,
+    "h": 1600
+  },
+  "service-retaining-wall-2": {
+    "widths": [
+      640,
+      1024,
+      1200
+    ],
+    "w": 1200,
+    "h": 1600
+  },
+  "service-retaining-wall": {
+    "widths": [
+      640,
+      1024,
+      1200
+    ],
+    "w": 1200,
+    "h": 1600
+  },
+  "service-stone-cladding-2": {
+    "widths": [
+      640,
+      1024,
+      1200
+    ],
+    "w": 1200,
+    "h": 1600
+  },
+  "service-stone-cladding": {
+    "widths": [
+      640,
+      1024
+    ],
+    "w": 1080,
+    "h": 1440
+  },
+  "thumbs/hero-1": {
+    "widths": [
+      640
+    ],
+    "w": 800,
+    "h": 800
+  },
+  "thumbs/process-2-build": {
+    "widths": [
+      640
+    ],
+    "w": 800,
+    "h": 800
+  },
+  "thumbs/service-concreting": {
+    "widths": [
+      640
+    ],
+    "w": 600,
+    "h": 800
+  },
+  "thumbs/service-fencing": {
+    "widths": [
+      640
+    ],
+    "w": 600,
+    "h": 800
+  },
+  "thumbs/service-gardens": {
+    "widths": [
+      640
+    ],
+    "w": 800,
+    "h": 800
+  },
+  "thumbs/service-paving": {
+    "widths": [
+      640
+    ],
+    "w": 600,
+    "h": 800
+  },
+  "thumbs/service-retaining-wall": {
+    "widths": [
+      640
+    ],
+    "w": 600,
+    "h": 800
+  },
+  "thumbs/service-stone-cladding": {
+    "widths": [
+      640
+    ],
+    "w": 600,
+    "h": 800
+  }
+}
