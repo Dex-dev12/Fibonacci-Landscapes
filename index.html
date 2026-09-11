@@ -23,10 +23,18 @@
     <link rel="dns-prefetch" href="https://links.versflows.com" />
     <link rel="preconnect" href="https://stcdn.leadconnectorhq.com" crossorigin />
     <link rel="dns-prefetch" href="https://backend.leadconnectorhq.com" />
+    <!-- Fonts load without blocking first paint. Lighthouse attributed ~1,950ms
+         of render-blocking time to this stylesheet: four families across 20
+         weights held up the first paint of an otherwise prerendered page. The
+         URL already asks for display=swap, so text renders in the fallback and
+         swaps when the faces arrive. -->
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;1,6..96,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Work+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;1,6..96,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Work+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" /></noscript>
     <!-- Google Analytics 4 -->
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCB4XBXQNP"></script>
