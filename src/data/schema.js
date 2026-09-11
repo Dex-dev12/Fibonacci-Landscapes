@@ -29,7 +29,7 @@ export const BUSINESS = {
   telephone: PHONE,
   email: EMAIL,
   description:
-    'Landscape construction specialising in pool surrounds, paving, concreting, retaining walls and stone cladding across the Central Coast and Lake Macquarie, NSW.',
+    'Landscape construction specialising in pool surrounds, paving, concreting, retaining walls and stone cladding across the Central Coast, Lake Macquarie and Newcastle, NSW.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '31 Reynolds Rd',
@@ -43,9 +43,13 @@ export const BUSINESS = {
     latitude: -33.264475,
     longitude: 151.5529397,
   },
+  // Mirrors the 16 places declared on the Google Business Profile. NAP and
+  // service area have to agree between the site and GBP, and the GBP is the
+  // client's own verified declaration of where they work.
   areaServed: [
     { '@type': 'AdministrativeArea', name: 'Central Coast, NSW' },
     { '@type': 'AdministrativeArea', name: 'Lake Macquarie, NSW' },
+    { '@type': 'AdministrativeArea', name: 'Newcastle, NSW' },
   ],
   openingHoursSpecification: [
     {
@@ -95,6 +99,7 @@ function serviceSchema(svc) {
     areaServed: [
       { '@type': 'AdministrativeArea', name: 'Central Coast, NSW' },
       { '@type': 'AdministrativeArea', name: 'Lake Macquarie, NSW' },
+      { '@type': 'AdministrativeArea', name: 'Newcastle, NSW' },
     ],
     url: `${SITE}/service/${svc.slug}`,
   }

@@ -6,7 +6,7 @@
 //
 // Everything here is either genuine trade practice or a confirmed fact about
 // the business: 7-8 years, pool specialty, stone cladding as a best-known
-// service, Central Coast and Lake Macquarie. No invented certifications, no
+// service, Central Coast, Lake Macquarie and Newcastle. No invented certifications, no
 // client names, no suburbs beyond the confirmed service area.
 
 export const SERVICE_CONTENT = {
@@ -53,7 +53,7 @@ export const SERVICE_CONTENT = {
 
   paving: {
     intro:
-      'Paving that stays flat is mostly invisible work. What you see is the surface; what determines whether it is still level in five years is the base underneath it, the falls set before anything is laid, and how the edges are restrained. Across the Central Coast and Lake Macquarie we deal with sandy coastal ground and reactive clay in different pockets, and the preparation changes accordingly.',
+      'Paving that stays flat is mostly invisible work. What you see is the surface; what determines whether it is still level in five years is the base underneath it, the falls set before anything is laid, and how the edges are restrained. Across the Central Coast, Lake Macquarie and Newcastle we deal with sandy coastal ground and reactive clay in different pockets, and the preparation changes accordingly.',
     sections: [
       {
         heading: 'Base preparation is the job',

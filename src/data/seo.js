@@ -24,37 +24,37 @@ const SERVICE_SEO = {
   paving: {
     title: 'Paving Central Coast | Driveways, Patios & Pool Decks',
     description:
-      'Natural stone, travertine and paver driveways, patios and pool decks across the Central Coast and Lake Macquarie. Proper base prep and grading for drainage.',
+      'Natural stone, travertine and paver driveways, patios and pool decks from the Central Coast to Newcastle. Proper base prep and grading for drainage.',
   },
   concreting: {
     title: 'Concreting Central Coast | Driveways, Paths & Slabs',
     description:
-      'Exposed aggregate, plain and coloured concrete for driveways, paths and slabs across the Central Coast and Lake Macquarie, graded correctly for drainage.',
+      'Exposed aggregate, plain and coloured concrete for driveways, paths and slabs from the Central Coast to Newcastle, graded correctly for drainage.',
   },
   'retaining-walls': {
     title: 'Retaining Walls Central Coast | Fibonacci Landscapes',
     description:
-      'Engineered retaining walls in block, stone and timber across the Central Coast and Lake Macquarie, built with proper drainage and correct footings.',
+      'Engineered retaining walls in block, stone and timber from the Central Coast to Newcastle, built with proper drainage and correct footings.',
   },
   gardens: {
     title: 'Garden & Landscape Design Central Coast | Fibonacci',
     description:
-      'Garden design, planting and soft landscaping across the Central Coast and Lake Macquarie, chosen for the local climate and how the space is actually used.',
+      'Garden design, planting and soft landscaping from the Central Coast to Newcastle, chosen for the local climate and how the space is actually used.',
   },
   'full-service': {
     title: 'Landscape Construction Central Coast | Full Service',
     description:
-      'Full-service landscape construction across the Central Coast and Lake Macquarie: excavation through to paving, walls, fencing and planting, managed end to end.',
+      'Full-service landscape construction from the Central Coast to Newcastle: excavation through to paving, walls, fencing and planting, managed end to end.',
   },
   fencing: {
     title: 'Fencing Central Coast | Pool & Boundary | Fibonacci',
     description:
-      'Pool-compliant glass, aluminium, timber and Colorbond fencing across the Central Coast and Lake Macquarie, set true and built to last in coastal conditions.',
+      'Pool-compliant glass, aluminium, timber and Colorbond fencing from the Central Coast to Newcastle, set true and built to last in coastal conditions.',
   },
   'stone-cladding': {
     title: 'Stone Cladding Central Coast | Fibonacci Landscapes',
     description:
-      'Sandstone and natural stone cladding for walls, pillars and pool surrounds across the Central Coast and Lake Macquarie. One of the services we are known for.',
+      'Sandstone and natural stone cladding for walls, pillars and pool surrounds from the Central Coast to Newcastle. One of the services we are known for.',
   },
 }
 
@@ -62,27 +62,27 @@ const STATIC_SEO = {
   '/': {
     title: 'Landscape Construction Central Coast | Fibonacci',
     description:
-      'Pool surrounds, paving, concreting, retaining walls and stone cladding across the Central Coast and Lake Macquarie NSW. 7-8 years specialising around pools.',
+      'Pool surrounds, paving, concreting, retaining walls and stone cladding from the Central Coast to Newcastle, NSW. 7-8 years specialising around pools.',
   },
   '/about': {
     title: 'About Fibonacci Landscape Construction | Central Coast',
     description:
-      'A pool surrounds specialist working across the Central Coast and Lake Macquarie, with 7-8 years building paving, walls, cladding and full landscape projects.',
+      'A pool surrounds specialist working from the Central Coast to Newcastle, with 7-8 years building paving, walls, cladding and full landscape projects.',
   },
   '/services': {
     title: 'Landscaping Services Central Coast & Lake Macquarie',
     description:
-      'Pool surrounds, paving, concreting, retaining walls, gardens, fencing and stone cladding across the Central Coast and Lake Macquarie NSW. See what we build.',
+      'Pool surrounds, paving, concreting, retaining walls, gardens, fencing and stone cladding from the Central Coast to Newcastle, NSW. See what we build.',
   },
   '/portfolio': {
     title: 'Our Work | Landscape Projects Central Coast | Fibonacci',
     description:
-      'Completed pool surrounds, paving, retaining walls and stone cladding projects across the Central Coast and Lake Macquarie. Real jobs, photographed on site.',
+      'Completed pool surrounds, paving, retaining walls and stone cladding projects from the Central Coast to Newcastle. Real jobs, photographed on site.',
   },
   '/contact': {
     title: 'Contact Fibonacci Landscape Construction | Central Coast',
     description:
-      'Get a quote for pool surrounds, paving, concreting or landscape construction across the Central Coast and Lake Macquarie. Call 0412 195 698 or send a message.',
+      'Get a quote for pool surrounds, paving, concreting or landscape construction from the Central Coast to Newcastle. Call 0412 195 698 or send a message.',
   },
   '/privacy': {
     title: `Privacy Policy | ${BRAND}`,

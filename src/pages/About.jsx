@@ -32,7 +32,7 @@ const WHY_HIGHLIGHTS = [
   {
     icon: MapPin,
     title: 'Local to the Coast',
-    text: "Based in Noraville, servicing the Central Coast and Lake Macquarie.",
+    text: "Based in Noraville, servicing the Central Coast, Lake Macquarie and Newcastle.",
   },
   {
     icon: Sofa,
@@ -150,7 +150,7 @@ export default function About() {
       <PageBanner
         eyebrow="About Us"
         title="A pool surrounds specialist, built around the Central Coast."
-        subtitle="7-8 years of experience transforming backyards and pool areas across the Central Coast and Lake Macquarie."
+        subtitle="7-8 years of experience transforming backyards and pool areas across the Central Coast, Lake Macquarie and Newcastle."
         img="/images/hero-3.jpg"
       />
 

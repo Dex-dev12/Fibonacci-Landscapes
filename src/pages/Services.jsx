@@ -25,7 +25,7 @@ export default function Services() {
       <PageBanner
         eyebrow="What We Do"
         title="Our Services"
-        subtitle="Pool surrounds, paving, concreting, retaining walls, gardens, fencing and stone cladding, across the Central Coast and Lake Macquarie."
+        subtitle="Pool surrounds, paving, concreting, retaining walls, gardens, fencing and stone cladding, across the Central Coast, Lake Macquarie and Newcastle."
         img="/images/hero-2.jpg"
       />
       <section ref={ref}>

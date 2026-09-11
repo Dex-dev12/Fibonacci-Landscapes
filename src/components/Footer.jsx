@@ -16,7 +16,7 @@ export default function Footer() {
           </h2>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mt-8 gap-6">
             <p className="text-white/50 max-w-md">
-              Fibonacci Landscape Construction, based in Noraville, servicing the Central Coast and Lake Macquarie.
+              Fibonacci Landscape Construction, based in Noraville, servicing the Central Coast, Lake Macquarie and Newcastle.
             </p>
             <Link to="/contact" className="magnetic-btn inline-flex items-center gap-2 bg-primary text-deep font-semibold px-7 py-3.5 rounded-full self-start sm:self-auto">
               Get a quote
@@ -32,7 +32,7 @@ export default function Footer() {
               <span className="font-display font-semibold text-lg">Fibonacci Landscapes</span>
             </div>
             <p className="text-white/50 text-sm leading-relaxed max-w-xs">
-              Pool surrounds, paving, concreting, retaining walls and garden landscaping across the Central Coast and Lake Macquarie.
+              Pool surrounds, paving, concreting, retaining walls and garden landscaping across the Central Coast, Lake Macquarie and Newcastle.
             </p>
             <a
               href="https://www.facebook.com/Fibonaccilandscape/"

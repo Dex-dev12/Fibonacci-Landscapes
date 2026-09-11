@@ -180,7 +180,7 @@ const WHO_WE_ARE_HIGHLIGHTS = [
   {
     icon: MapPin,
     title: 'Local to the Coast',
-    text: 'Based in Noraville, servicing the Central Coast and Lake Macquarie.',
+    text: 'Based in Noraville, servicing the Central Coast, Lake Macquarie and Newcastle.',
   },
 ]
 
@@ -232,7 +232,7 @@ function WhoWeAre() {
             <span className="block font-serif italic font-medium text-primary">one job at a time.</span>
           </h2>
           <p className="text-muted text-lg leading-relaxed mb-10">
-            Every job gets the same crew and the same standard — pool surrounds, paving, concreting, retaining walls, gardens and stone cladding across the Central Coast and Lake Macquarie.
+            Every job gets the same crew and the same standard — pool surrounds, paving, concreting, retaining walls, gardens and stone cladding across the Central Coast, Lake Macquarie and Newcastle.
           </p>
 
           <div className="space-y-7">
@@ -398,7 +398,7 @@ function ServicesGrid() {
             </h2>
           </div>
           <p className="text-white/60 max-w-md text-base leading-relaxed">
-            Residential and commercial jobs across the Central Coast and Lake Macquarie.
+            Residential and commercial jobs across the Central Coast, Lake Macquarie and Newcastle.
           </p>
         </div>
 
