@@ -17,10 +17,10 @@ export default {
         deep: '#060C16',
       },
       fontFamily: {
-        display: ['"Bodoni Moda"', 'serif'],
-        serif: ['"Cormorant Garamond"', 'serif'],
-        body: ['"Work Sans"', 'system-ui', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
+        display: ['"Bodoni Moda"', '"Bodoni Fallback"', 'serif'],
+        serif: ['"Cormorant Garamond"', '"Cormorant Fallback"', 'serif'],
+        body: ['"Work Sans"', '"Work Sans Fallback"', 'system-ui', 'sans-serif'],
+        mono: ['"JetBrains Mono"', '"JetBrains Fallback"', 'monospace'],
       },
       borderRadius: {
         '2.5xl': '1.25rem',

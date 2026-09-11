@@ -19,12 +19,17 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const SRC = path.join(__dirname, '..', 'public', 'images')
 const OUT = path.join(SRC, 'r')
 
-// 640/1024 cover most phones; 1200 exists because a 390px viewport at DPR 3
-// needs ~1170px, and without a candidate that large the browser reaches past
-// the WebP set for the full-size JPEG. 1440 covers desktop. Quality tapers
-// with width because artefacts are less visible per-pixel on larger variants.
-const WIDTHS = [640, 1024, 1200, 1440]
-const QUALITY = { 640: 78, 1024: 74, 1200: 62, 1440: 58 }
+// Widths are chosen against real device needs, not round numbers. Lighthouse
+// mobile is 412px CSS at DPR 1.75, so it needs ~721px: with only 640 and 1024
+// available the browser reached for 1024 and pulled 305KB images on a phone.
+// 768 covers that case. 1200 covers a 390px viewport at DPR 3 (~1170px) and
+// 1440 covers desktop.
+//
+// Quality tapers with width because compression artefacts are less visible
+// per-pixel on larger variants. The previous flat q74 at 1024 produced 305KB
+// files - heavier than the tier is worth.
+const WIDTHS = [640, 768, 1024, 1200, 1440]
+const QUALITY = { 640: 72, 768: 66, 1024: 58, 1200: 52, 1440: 48 }
 
 async function walk(dir, base = '') {
   const out = []
