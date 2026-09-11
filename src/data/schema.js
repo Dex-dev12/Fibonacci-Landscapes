@@ -51,12 +51,14 @@ export const BUSINESS = {
     { '@type': 'AdministrativeArea', name: 'Lake Macquarie, NSW' },
     { '@type': 'AdministrativeArea', name: 'Newcastle, NSW' },
   ],
+  // Mirrors the Google Business Profile, which is the source of truth for
+  // hours: open 7 days, 6am to 7pm.
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      opens: '07:00',
-      closes: '17:00',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '06:00',
+      closes: '19:00',
     },
   ],
   sameAs: [

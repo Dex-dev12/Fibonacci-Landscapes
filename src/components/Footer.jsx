@@ -75,7 +75,7 @@ export default function Footer() {
                 <a href="tel:+61412195698" className="text-white/65 hover:text-primary transition text-sm">0412 195 698</a>
               </li>
               <li className="text-white/65 text-sm">31 Reynolds Rd, Noraville 2263</li>
-              <li className="text-white/65 text-sm">Mon&ndash;Sat: 7am&ndash;5pm<br />Sunday: Closed</li>
+              <li className="text-white/65 text-sm">Open 7 days<br />6am&ndash;7pm</li>
             </ul>
           </div>
         </div>

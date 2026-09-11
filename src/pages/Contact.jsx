@@ -70,8 +70,8 @@ export default function Contact() {
                   <span className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0"><Clock className="h-4 w-4 text-primary" /></span>
                   <div>
                     <p className="text-xs text-muted">Hours</p>
-                    <p className="font-medium text-ink">Mon&ndash;Sat: 7am&ndash;5pm</p>
-                    <p className="font-medium text-ink">Sunday: Closed</p>
+                    <p className="font-medium text-ink">Open 7 days</p>
+                    <p className="font-medium text-ink">6am &ndash; 7pm</p>
                   </div>
                 </div>
               </div>
