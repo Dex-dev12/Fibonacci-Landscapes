@@ -73,8 +73,15 @@ function Hero() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.hero-line-1', { y: 40, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.3 })
-      gsap.from('.hero-line-2', { y: 60, opacity: 0, duration: 1.2, ease: 'power3.out', delay: 0.5 })
+      // The headline is the LCP element, and an element at opacity 0 is not an
+      // LCP candidate - so fading it in meant Chrome did not count the hero as
+      // painted until the animation finished. The server delivers this text in
+      // 3ms; the old `opacity: 0` plus a 0.3s delay and 1s duration was adding
+      // ~1.65s of element render delay on its own.
+      //
+      // Animating y alone keeps the movement and loses only the fade.
+      gsap.from('.hero-line-1', { y: 40, duration: 1, ease: 'power3.out', delay: 0.3 })
+      gsap.from('.hero-line-2', { y: 60, duration: 1.2, ease: 'power3.out', delay: 0.5 })
       gsap.from('.hero-cta, .hero-meta', {
         y: 24,
         opacity: 0,
