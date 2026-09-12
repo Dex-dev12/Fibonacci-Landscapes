@@ -17,11 +17,14 @@
          metrics-matched fallbacks below carry size-adjust and ascent/descent
          overrides computed from the real font tables, so a page view that
          misses the window still lays out almost identically.
-         Only Work Sans is preloaded. Preloading Bodoni as well put a 46KB
-         high-priority request ahead of the render-blocking stylesheet, which
-         held first paint to 3.4s; the display face falls back cleanly instead
-         and loads from cache on later views. -->
+         Both faces are preloaded. Dropping the Bodoni preload was tried while
+         first paint sat at 3.4s, on the theory it was starving the stylesheet;
+         the real cost turned out to be gtag.js in the critical path. With that
+         deferred, the preload is back - without it, font-display: optional
+         means headings render in the Times-based fallback on a first visit and
+         never swap. -->
     <link rel="preload" as="font" type="font/woff2" href="/fonts/WorkSans-400.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/BodoniModa-var.woff2" crossorigin />
     <style>
       @font-face{font-family:'Work Sans';font-style:normal;font-weight:400;font-display:optional;src:url('/fonts/WorkSans-400.woff2') format('woff2');}
       @font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:600 700;font-display:optional;src:url('/fonts/BodoniModa-var.woff2') format('woff2');}
