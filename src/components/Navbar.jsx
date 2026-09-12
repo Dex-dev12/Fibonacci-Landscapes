@@ -143,7 +143,7 @@ export default function Navbar() {
               <FibonacciMark className="h-8 w-8" />
               <span className="font-display font-semibold text-xl text-ink">Fibonacci Landscapes</span>
             </div>
-            <button onClick={() => setOpen(false)} className="p-2 rounded-full bg-divider/40">
+            <button onClick={() => setOpen(false)} aria-label="Close menu" className="p-2 rounded-full bg-divider/40">
               <X className="h-5 w-5" />
             </button>
           </div>
@@ -153,6 +153,7 @@ export default function Navbar() {
                 <div key={link.href} className="border-b border-divider py-3">
                   <button
                     onClick={() => setMobileServicesOpen((v) => !v)}
+                    aria-expanded={mobileServicesOpen}
                     className="flex items-center gap-1.5 font-display text-3xl font-semibold text-ink"
                   >
                     {link.label} <ChevronDown className={`h-6 w-6 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} />

@@ -38,7 +38,7 @@ export default function Footer() {
               href="https://www.facebook.com/Fibonaccilandscape/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-widest text-white/40 hover:text-primary transition mt-6"
+              className="inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-widest text-white/60 hover:text-primary transition mt-6"
             >
               Follow on Facebook <ArrowUpRight className="h-3 w-3" />
             </a>
