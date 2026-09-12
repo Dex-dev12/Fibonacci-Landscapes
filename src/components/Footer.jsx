@@ -61,6 +61,7 @@ export default function Footer() {
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-primary mb-4">Company</p>
             <ul className="space-y-2.5">
               <li><Link to="/about" className="text-white/65 hover:text-primary transition text-sm">About Us</Link></li>
+              <li><Link to="/areas" className="text-white/65 hover:text-primary transition text-sm">Service Area</Link></li>
               <li><Link to="/portfolio" className="text-white/65 hover:text-primary transition text-sm">Portfolio</Link></li>
               <li><Link to="/contact" className="text-white/65 hover:text-primary transition text-sm">Contact</Link></li>
               <li><Link to="/privacy" className="text-white/65 hover:text-primary transition text-sm">Privacy</Link></li>
