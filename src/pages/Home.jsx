@@ -71,6 +71,19 @@ function HeroCarousel() {
 function Hero() {
   const heroRef = useRef(null)
 
+  // Defer the hero shimmer until the page has settled: see the note on
+  // .shimmer-text below. Adding a class rather than toggling the animation
+  // property avoids a style recalc on every element.
+  useEffect(() => {
+    const start = () => document.documentElement.classList.add('shimmer-ready')
+    if ('requestIdleCallback' in window) {
+      const id = window.requestIdleCallback(start, { timeout: 4000 })
+      return () => window.cancelIdleCallback(id)
+    }
+    const id = setTimeout(start, 2500)
+    return () => clearTimeout(id)
+  }, [])
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       // The headline is the LCP element, and an element at opacity 0 is not an
@@ -137,7 +150,19 @@ function Hero() {
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            animation: shimmer-text-sweep 3.2s ease-in-out infinite;
+          }
+          /* The sweep animates background-position on background-clip: text,
+             which cannot be GPU-composited - the browser repaints this text on
+             the main thread every frame. Running it infinitely from load put
+             it straight through the TBT measurement window and was the whole
+             460ms vs 170ms gap against the Markwicks build, which has no
+             non-composited animations at all.
+             The gradient still renders immediately; only the sweep waits for
+             the page to go idle, and it stops for reduced-motion users. */
+          @media (prefers-reduced-motion: no-preference) {
+            .shimmer-ready .shimmer-text {
+              animation: shimmer-text-sweep 3.2s ease-in-out infinite;
+            }
           }
           @keyframes shimmer-text-sweep {
             0% { background-position: 200% 0; }
