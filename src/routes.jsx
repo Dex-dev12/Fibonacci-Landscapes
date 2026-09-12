@@ -6,6 +6,8 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Services from './pages/Services.jsx'
 import ServiceDetail from './pages/ServiceDetail.jsx'
+import Areas from './pages/Areas.jsx'
+import AreaDetail from './pages/AreaDetail.jsx'
 import Portfolio from './pages/Portfolio.jsx'
 import Contact from './pages/Contact.jsx'
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx'
@@ -19,6 +21,8 @@ export default function AppRoutes() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/service/:slug" element={<ServiceDetail />} />
+        <Route path="/areas" element={<Areas />} />
+        <Route path="/areas/:slug" element={<AreaDetail />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />

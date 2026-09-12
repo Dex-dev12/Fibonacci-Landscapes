@@ -12,6 +12,7 @@
 // certifications.
 
 import { SERVICES } from './services.js'
+import { AREAS, getAreaBySlug } from './areas.js'
 import { SITE, BRAND } from './seo.js'
 
 const PHONE = '+61412195698'
@@ -107,9 +108,38 @@ function serviceSchema(svc) {
   }
 }
 
+// Area pages describe the same business serving a named place, so they get a
+// HomeAndConstructionBusiness scoped to that area with branchOf pointing at the
+// main entity - not a bare Service, which would not carry the location.
+function areaBusiness(area) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HomeAndConstructionBusiness',
+    '@id': `${SITE}/areas/${area.slug}#business`,
+    name: `${BRAND} - ${area.name}`,
+    url: `${SITE}/areas/${area.slug}`,
+    image: `${SITE}/images/hero-2.jpg`,
+    telephone: BUSINESS.telephone,
+    email: BUSINESS.email,
+    parentOrganization: { '@id': `${SITE}/#business` },
+    branchOf: { '@id': `${SITE}/#business` },
+    address: BUSINESS.address,
+    areaServed: {
+      '@type': 'City',
+      name: `${area.name}, NSW`,
+      ...(area.postcode ? { postalCode: area.postcode } : {}),
+    },
+    makesOffer: SERVICES.map((sv) => ({
+      '@type': 'Offer',
+      itemOffered: { '@type': 'Service', name: `${sv.title} in ${area.name}` },
+    })),
+  }
+}
+
 const STATIC_TRAILS = {
   '/about': [{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }],
   '/services': [{ name: 'Home', path: '/' }, { name: 'Services', path: '/services' }],
+  '/areas': [{ name: 'Home', path: '/' }, { name: 'Service Area', path: '/areas' }],
   '/portfolio': [{ name: 'Home', path: '/' }, { name: 'Our Work', path: '/portfolio' }],
   '/contact': [{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact' }],
   '/privacy': [{ name: 'Home', path: '/' }, { name: 'Privacy Policy', path: '/privacy' }],
@@ -134,6 +164,20 @@ export function schemaFor(pathname) {
         { name: 'Home', path: '/' },
         { name: 'Services', path: '/services' },
         { name: svc.title, path: `/service/${svc.slug}` },
+      ]),
+    ]
+  }
+
+  const a = /^\/areas\/([^/]+)$/.exec(path)
+  if (a) {
+    const area = getAreaBySlug(a[1])
+    if (!area) return [BUSINESS]
+    return [
+      areaBusiness(area),
+      breadcrumb([
+        { name: 'Home', path: '/' },
+        { name: 'Service Area', path: '/areas' },
+        { name: area.name, path: `/areas/${area.slug}` },
       ]),
     ]
   }

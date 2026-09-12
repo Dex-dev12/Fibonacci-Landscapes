@@ -1,10 +1,11 @@
 import { useEffect, useRef } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { gsap } from 'gsap'
-import { ArrowRight, ArrowUpRight, CheckCircle2 } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, CheckCircle2, MapPin } from 'lucide-react'
 import { PageBanner } from '../components/shared.jsx'
 import { SERVICES, getServiceBySlug } from '../data/services.js'
 import { SERVICE_CONTENT } from '../data/serviceContent.js'
+import { AREAS } from '../data/areas.js'
 import Img from '../components/Img.jsx'
 
 export default function ServiceDetail() {
@@ -100,6 +101,27 @@ export default function ServiceDetail() {
           </div>
         </section>
       )}
+
+      <section className="pb-16">
+        <div className="max-w-3xl mx-auto px-6 sm:px-10 lg:px-16">
+          <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-ink mb-5">
+            Where we do {service.title.toLowerCase()}
+          </h2>
+          <p className="text-muted leading-relaxed text-base sm:text-lg mb-6">
+            Across the Central Coast, Lake Macquarie and Newcastle.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {AREAS.map((a) => (
+              <Link key={a.slug} to={`/areas/${a.slug}`} className="inline-flex items-center gap-2 rounded-full border border-divider px-5 py-2.5 text-sm text-ink hover:border-primary/50 transition-colors">
+                <MapPin className="h-3.5 w-3.5 text-primary" /> {service.title} in {a.name}
+              </Link>
+            ))}
+            <Link to="/areas" className="inline-flex items-center gap-2 rounded-full border border-divider px-5 py-2.5 text-sm text-ink hover:border-primary/50 transition-colors">
+              All areas <ArrowRight className="h-3.5 w-3.5 text-primary" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {content?.faqs?.length > 0 && (
         <section className="pb-24 sm:pb-32">

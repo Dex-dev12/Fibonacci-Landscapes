@@ -10,6 +10,7 @@
 // they are not truncated in results. Descriptions sit between 140 and 160.
 
 import { SERVICES } from './services.js'
+import { AREAS } from './areas.js'
 
 export const SITE = 'https://www.fibonaccilandscapes.com.au'
 export const BRAND = 'Fibonacci Landscape Construction'
@@ -58,6 +59,19 @@ const SERVICE_SEO = {
   },
 }
 
+const AREA_SEO = {
+  toukley: {
+    title: 'Landscaping Toukley | Pool Surrounds & Paving | Fibonacci',
+    description:
+      'Landscape construction in Toukley NSW, two kilometres from our yard. Pool surrounds, paving, retaining walls and fencing built for sandy coastal ground.',
+  },
+  newcastle: {
+    title: 'Landscaping Newcastle | Stone Cladding & Paving',
+    description:
+      'Landscape construction across Newcastle, Wallsend and Mayfield. Stone cladding, paving, retaining walls and concreting on established, tight-access blocks.',
+  },
+}
+
 const STATIC_SEO = {
   '/': {
     title: 'Landscape Construction Central Coast | Fibonacci',
@@ -73,6 +87,11 @@ const STATIC_SEO = {
     title: 'Landscaping Services Central Coast & Lake Macquarie',
     description:
       'Pool surrounds, paving, concreting, retaining walls, gardens, fencing and stone cladding from the Central Coast to Newcastle, NSW. See what we build.',
+  },
+  '/areas': {
+    title: 'Service Area | Central Coast to Newcastle | Fibonacci',
+    description:
+      'Where Fibonacci Landscape Construction works: the Central Coast, Lake Macquarie and Newcastle NSW, including Toukley, Gosford, Belmont and Wallsend.',
   },
   '/portfolio': {
     title: 'Our Work | Landscape Projects Central Coast | Fibonacci',
@@ -108,6 +127,11 @@ export function seoFor(pathname) {
     return { ...SERVICE_SEO[m[1]], canonical: `${SITE}${path}` }
   }
 
+  const a = /^\/areas\/([^/]+)$/.exec(path)
+  if (a && AREA_SEO[a[1]]) {
+    return { ...AREA_SEO[a[1]], canonical: `${SITE}${path}` }
+  }
+
   // Unknown route: fall back to the site defaults rather than emitting nothing.
   return { ...STATIC_SEO['/'], canonical: `${SITE}${path}` }
 }
@@ -118,6 +142,8 @@ export const ROUTES = [
   '/about',
   '/services',
   ...SERVICES.map((s) => `/service/${s.slug}`),
+  '/areas',
+  ...AREAS.map((a) => `/areas/${a.slug}`),
   '/portfolio',
   '/contact',
   '/privacy',
