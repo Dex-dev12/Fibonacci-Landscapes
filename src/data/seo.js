@@ -70,6 +70,21 @@ const AREA_SEO = {
     description:
       'Landscape construction across Newcastle, Wallsend and Mayfield. Stone cladding, paving, retaining walls and concreting on established, tight-access blocks.',
   },
+  'the-entrance': {
+    title: 'Landscaping The Entrance | Pool Surrounds & Paving',
+    description:
+      'Landscape construction at The Entrance NSW. Pool surrounds, paving and fencing specified for constant coastal salt exposure, scheduled around holiday lettings.',
+  },
+  gosford: {
+    title: 'Landscaping Gosford | Retaining Walls & Terracing',
+    description:
+      'Landscape construction around Gosford and Brisbane Water. Retaining walls, terracing and concreting built for sloped blocks, clay ground and sandstone shelf.',
+  },
+  belmont: {
+    title: 'Landscaping Belmont | Lake Macquarie | Fibonacci',
+    description:
+      'Landscape construction in Belmont and the Lake Macquarie suburbs. Retaining walls, pool surrounds and paving for blocks that fall toward the water.',
+  },
 }
 
 const STATIC_SEO = {
