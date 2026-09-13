@@ -4,6 +4,7 @@ import { gsap } from 'gsap'
 import { ArrowUpRight } from 'lucide-react'
 import { PageBanner } from '../components/shared.jsx'
 import { PORTFOLIO_ITEMS } from '../data/portfolio.js'
+import { PORTFOLIO_DETAIL, PORTFOLIO_PAGE } from '../data/portfolioDetail.js'
 import Img from '../components/Img.jsx'
 
 function PortfolioClosingCta() {
@@ -51,38 +52,56 @@ export default function Portfolio() {
         img="/images/service-stone-cladding.jpg"
       />
 
-      <section ref={ref} className="py-24 sm:py-32">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {PORTFOLIO_ITEMS.map((item) => (
-              <a
-                key={item.slug}
-                href={item.img}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="portfolio-tile relative rounded-3xl overflow-hidden border border-divider group aspect-[4/3] cursor-pointer"
-              >
-                <Img
-                  src={item.img}
-                  alt={item.alt}
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  loading="lazy"
-                  decoding="async"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-deep/95 via-deep/25 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 flex items-end justify-between gap-3">
-                  <div>
-                    <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-primary-light mb-1.5">{item.category}</p>
-                    <p className="text-white font-display text-lg font-semibold leading-snug">{item.title}</p>
-                  </div>
-                  <span className="shrink-0 inline-flex items-center gap-1 text-[11px] font-mono uppercase tracking-widest text-white/70 group-hover:text-primary-light transition-colors">
-                    View more <ArrowUpRight className="h-3 w-3" />
-                  </span>
+      <section ref={ref} className="py-20 sm:py-28">
+        <div className="max-w-3xl mx-auto px-6 sm:px-10 lg:px-16 mb-16 sm:mb-20">
+          <p className="portfolio-intro text-ink leading-relaxed text-lg sm:text-xl">{PORTFOLIO_PAGE.intro}</p>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 space-y-16 sm:space-y-24">
+          {PORTFOLIO_ITEMS.map((item, i) => {
+            const d = PORTFOLIO_DETAIL[item.slug]
+            const flip = i % 2 === 1
+            return (
+              <article key={item.slug} className="portfolio-tile grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <div className={flip ? 'lg:order-2' : ''}>
+                  <a
+                    href={item.img}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block relative rounded-3xl overflow-hidden border border-divider group aspect-[4/3]"
+                  >
+                    <Img
+                      src={item.img}
+                      alt={item.alt}
+                      sizes="(min-width: 1024px) 50vw, 100vw"
+                      loading="lazy"
+                      decoding="async"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </a>
+                  {d?.note && <p className="mt-3 text-xs text-muted">{d.note}</p>}
                 </div>
-              </a>
-            ))}
-          </div>
+
+                <div className={flip ? 'lg:order-1' : ''}>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-primary mb-3">{item.category}</p>
+                  <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-ink mb-4">{item.title}</h2>
+                  <p className="text-muted leading-relaxed text-base sm:text-lg">{d?.detail || item.summary}</p>
+                  <a
+                    href={item.img}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 mt-5 text-sm font-medium text-primary hover:gap-2.5 transition-all"
+                  >
+                    View full photo <ArrowUpRight className="h-3.5 w-3.5" />
+                  </a>
+                </div>
+              </article>
+            )
+          })}
+        </div>
+
+        <div className="max-w-3xl mx-auto px-6 sm:px-10 lg:px-16 mt-20">
+          <p className="text-ink leading-relaxed text-base sm:text-lg border-t border-divider pt-8">{PORTFOLIO_PAGE.closing}</p>
         </div>
       </section>
 
