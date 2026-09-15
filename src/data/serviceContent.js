@@ -12,7 +12,7 @@
 export const SERVICE_CONTENT = {
   'pool-surrounds': {
     intro:
-      'A pool surround is the hardest-working paving on a property. It takes constant splash-out, pool chemistry, bare feet, furniture and sun, and it has to stay flat and safe through all of it. Most of what separates a surround that still looks right in ten years from one that lifts, stains or turns slippery is decided before a single paver goes down.',
+      'A pool surround - the coping and pool paving around the water - is the hardest-working hard surface on a property. It takes constant splash-out, pool chemistry, bare feet, furniture and sun, and it has to stay flat and safe through all of it. Most of what separates a surround that still looks right in ten years from one that lifts, stains or turns slippery is decided before a single paver goes down.',
     sections: [
       {
         heading: 'Drainage decides everything',
@@ -23,7 +23,7 @@ export const SERVICE_CONTENT = {
         body: 'Wet bare feet on a hard surface is the highest-risk surface on a residential property, and slip resistance is measured and rated rather than eyeballed. We select materials with a slip rating suited to a pool edge and lay them so the surface texture is consistent across the whole area. Honed travertine, flamed granite, tumbled natural stone and textured pavers all behave differently underfoot when wet, and the right answer depends on how much sun the area gets and whether it doubles as an entertaining space.',
       },
       {
-        heading: 'Coping, and how the edge is finished',
+        heading: 'Pool coping, and how the edge is finished',
         body: 'The coping is the piece everyone touches and the piece that dates a pool fastest. Bullnose, square-edge and drop-face coping each suit different pool shells and different looks, and the join between coping and surround has to allow for movement without opening into a gap. We cut and set coping so the line stays true around curves and the overhang is consistent, because an uneven coping line is visible from every angle for the life of the pool.',
       },
       {
@@ -37,7 +37,7 @@ export const SERVICE_CONTENT = {
         a: 'In most cases yes. The pool stays full and we protect the waterline and shell while the old surround comes up. Emptying is only necessary where the coping is being replaced in a way that exposes the shell edge, and we would tell you before starting if that applies.',
       },
       {
-        q: 'What is the best material around a saltwater pool?',
+        q: 'What is the best pool paving for a saltwater pool?',
         a: 'Salt is harder on porous stone and on grout than fresh chlorinated water. Dense materials such as granite and quality porcelain handle it best with the least maintenance. Travertine and sandstone still work well and are common around Central Coast pools, but they benefit from sealing and will want resealing periodically.',
       },
       {
