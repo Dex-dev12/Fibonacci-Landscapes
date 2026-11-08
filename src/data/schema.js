@@ -16,7 +16,7 @@ import { AREAS, getAreaBySlug } from './areas.js'
 import { SITE, BRAND } from './seo.js'
 
 const PHONE = '+61412195698'
-const EMAIL = 'contact@fibonaccilandscapes.com.au'
+const EMAIL = 'fibonaccilandscapes@gmail.com'
 
 export const BUSINESS = {
   '@context': 'https://schema.org',

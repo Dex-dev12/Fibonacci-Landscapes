@@ -10,8 +10,8 @@ function TopBar() {
       <a href="tel:+61412195698" className="inline-flex items-center gap-1.5 hover:text-primary-light transition-colors">
         <Phone className="h-3 w-3" /> 0412 195 698
       </a>
-      <a href="mailto:contact@fibonaccilandscapes.com.au" className="inline-flex items-center gap-1.5 hover:text-primary-light transition-colors">
-        <Mail className="h-3 w-3" /> contact@fibonaccilandscapes.com.au
+      <a href="mailto:fibonaccilandscapes@gmail.com" className="inline-flex items-center gap-1.5 hover:text-primary-light transition-colors">
+        <Mail className="h-3 w-3" /> fibonaccilandscapes@gmail.com
       </a>
     </div>
   )
